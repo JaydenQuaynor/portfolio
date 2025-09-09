@@ -1,0 +1,133 @@
+
+
+
+.wrapper{
+    width: 100%;
+}
+
+.box{
+    width: 100%;
+    min-height: 250px;
+    border-radius: 15px;
+    box-shadow: 0 3px 50px #00000022;
+    display: flex;
+}
+
+.contentContainer{
+    display: flex;
+    height: auto;
+    justify-content: space-between;
+    align-items: flex-end;
+
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin: 2rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: fit-content;
+    flex: 1;
+}
+
+.imageContainer{
+    padding: 1px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    border-radius: 0.5rem;
+}
+.imageContainer:hover{
+    scale: 1.1;
+    transition: ease-in 225ms;
+}
+
+.headshot{
+    border-radius: 0.5rem;
+}
+
+
+.title{
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.subline{
+
+    color: rgba(0, 0, 0, 0.455);
+    font-size: 14px;
+}
+
+.btn{
+    font-size: 14px;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-width: 1px;
+    border-radius: 81px;
+    cursor: pointer;
+    transition: ease-in 125ms;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    gap: 4px;
+}
+
+.btn:hover{
+    transform: scale(1.05);
+    background-color: black;
+    color: white;
+    border:none;
+
+}
+
+.btn:hover .arrow{
+    transform: rotate(45deg);
+}
+
+
+.arrow{
+    transform: rotate(90deg);
+    transition: ease-in 325ms;
+}
+
+
+
+.img{  
+    height: auto;
+    border-radius: 15px 0 0 0;
+    max-height: 250px;
+    max-width: 100%;
+    width: 100%;
+    object-fit: contain;
+    box-shadow: 0 4px 35px rgba(0, 0, 0, 0.395);
+    display: block;
+    transition: ease-in 125ms;
+}
+
+.img:hover{
+    scale: 1.01;
+}
+
+
+/*
+@media (max-width: 900px) {
+    .img {
+        max-height: 180px;
+        border-radius: 12px 0 0 0;
+    }
+    .btn {
+        font-size: 13px;
+        padding: 3px 7px;
+    }
+    .subline {
+        font-size: 13px;
+    }
+}
+*/
+@media (max-width: 600px) {
+    .contentContainer{
+        display: flex;
+        flex-direction: column;
+    }
+}
