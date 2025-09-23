@@ -16,7 +16,7 @@ export default function StackCard({logo,companyName,url}: StackCardProps){
     return(
 
         <div className={styles.box}>
-            <a href={url}>
+            <a href={url} target="_blank" rel="noopener noreferrer">
             <span className={styles.arrowbox}>
             
             <Icon className={styles.arrow} icon="bitcoin-icons:arrow-up-outline" width="16" height="16" />

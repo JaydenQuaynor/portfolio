@@ -13,7 +13,7 @@ export default function Clients(){
   logoPfp="/images/logos/Default_pfp.svg.png"
   clientName="Dwayne"
   companyName="OTR Fitness"
-  companyUrl="#"
+  companyUrl="https://otrhealthclub.com/"
 />
 
 <ClientCard
@@ -29,7 +29,7 @@ export default function Clients(){
   logoPfp="/images/logos/Default_pfp.svg.png"
   clientName="Jovany"
   companyName="BPT Overhead"
-  companyUrl="#"
+  companyUrl="https://bptoverhead.com/"
 />
 
 <ClientCard
@@ -37,7 +37,7 @@ export default function Clients(){
   logoPfp="/images/logos/Default_pfp.svg.png"
   clientName="John"
   companyName="Casa Taino Modular"
-  companyUrl="#"
+  companyUrl="https://flowing-follow-434889.framer.app/"
 />
 
 <ClientCard
@@ -45,7 +45,7 @@ export default function Clients(){
   logoPfp="/images/logos/Default_pfp.svg.png"
   clientName="Patricia"
   companyName="MyGoodAgent / Pantrica"
-  companyUrl="#"
+  companyUrl="https://patriciapracanica.mgarealty.com/agents/1703569/Patricia+Pracanica"
 />
 
  

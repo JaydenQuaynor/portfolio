@@ -5,7 +5,7 @@ import Ventures from "./Tabs/Ventures";
 import Services from "./Tabs/Services";
 import Clients from "./Tabs/Clients";
 import Stack from "./Tabs/Stack";
-import Connect from "./Tabs/Connect";
+
 
 
 
@@ -14,7 +14,7 @@ export default function Tabs(){
 
     const [activeTab, setActiveTab] = useState(0)
 
-    const tabs = ["Ventures", "Services", "Clients", "Stack","Connect"];
+    const tabs = ["Ventures", "Services", "Clients", "Stack"];
 
     
     return(
@@ -40,7 +40,6 @@ export default function Tabs(){
         {activeTab === 1 && <Services />}
         {activeTab === 2 && <Clients />}
         {activeTab === 3 && <Stack />}
-        {activeTab === 4 && <Connect />}
         
       </div>
 

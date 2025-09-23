@@ -11,6 +11,7 @@ interface InfoCardProps {
     buttonUrl: string;
     mainImage: string;
     mainImageAlt: string;
+    status: "live" | "design" | "inactive";
   }
 
 
@@ -22,8 +23,11 @@ export default function InfoCard({
     buttonText,
     buttonUrl,
     mainImage,
-    mainImageAlt
+    mainImageAlt,
+    status
   }: InfoCardProps){
+    const statusLabel = status === "live" ? "Live" : status === "design" ? "Design" : "Inactive";
+    const statusClass = status === "live" ? styles.statusLive : status === "design" ? styles.statusDesign : styles.statusInactive;
     return(
         <div className={styles.wrapper}>
             <div className={styles.box}>
@@ -42,14 +46,14 @@ export default function InfoCard({
               
                         </div>
 
-                        <div className={styles.borderBox}>
-                                <p className={styles.statusTag}>Live</p>
+                        <div className={`${styles.borderBox} ${statusClass}`}>
+                                <p className={styles.statusTag}>{statusLabel}</p>
                             </div>
 
                             </div>
                         <h1 className={styles.title}>{title}</h1>
                         <p className={styles.subline}>{description}</p>
-                        <a href={buttonUrl} className={styles.btn}>
+                        <a href={buttonUrl} className={styles.btn} target="_blank" rel="noopener noreferrer">
                             {buttonText}
                             <Icon className={styles.arrow} icon="majesticons:arrow-up" width="14" height="14" />
                         </a>

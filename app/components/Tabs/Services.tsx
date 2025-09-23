@@ -31,22 +31,9 @@ export default function Services(){
                   serviceDescription="Engaging content that builds brand and trust" 
                 />
             <div className="flex justify-center gap-4 m-5">
-            <Button
-
-            cta="Book a Call"
-            backgroundColor = "#000"
-            backgroundColorHover = "#fff"
-            textColor = "#fff"
             
-            />
-            <Button
-
-            cta="Send an Email"
-            backgroundColor = "#fff"
-            backgroundColorHover = "#fff"
-            textColor = "#000"
-            
-            />
+          
+            <a className="underline" href="mailto:aydenQuaynor@gmail.com">Send me an email : JaydenQuaynor@gmail.com</a>
 
 
             </div>

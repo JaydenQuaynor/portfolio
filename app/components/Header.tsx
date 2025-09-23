@@ -24,20 +24,20 @@ export default function Header() {
    
           
             <div className={styles.socialIcons}>
-            <a href="https://placeholder.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://x.com/Quaynor1k" target="_blank" rel="noopener noreferrer">
               <Icon icon="streamline-logos:x-twitter-logo-block" width="24" height="24" />
             </a>
-            <a href="https://placeholder.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/jaydenquaynor/" target="_blank" rel="noopener noreferrer">
               <Icon icon="ri:instagram-fill" width="24px" height="24px" />
             </a>
-            <a href="https://placeholder.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/jayden-quaynor-874ab8256/" target="_blank" rel="noopener noreferrer">
               <Icon icon="uil:linkedin" width="24" height="24" />
             </a>
-            <a href="https://placeholder.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/JaydenQuaynor" target="_blank" rel="noopener noreferrer">
               <Icon icon="mdi:github" width="24" height="24" />
             </a>
-            <a href="https://placeholder.com" target="_blank" rel="noopener noreferrer">
-              <Icon icon="fa6-solid:paper-plane" width="24" height="24" />
+            <a href="https://www.youtube.com/@Quaynor" target="_blank" rel="noopener noreferrer">
+              <Icon icon="mdi:youtube" width="24" height="24" />
             </a>
             </div>
             </div>  
