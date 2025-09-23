@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Icon } from "@iconify/react";
 import styles from "../styles/header.module.css";
-import { IconBrandX } from '@tabler/icons-react';
 
 export default function Header() {
     return (
@@ -19,7 +18,7 @@ export default function Header() {
             </div> 
 
             <div className={styles.intro}>
-                <h1 className={styles.headline} >Hey, I'm Jayden Quaynor.</h1>
+                <h1 className={styles.headline} >Hey, I&apos;m Jayden Quaynor.</h1>
                 <p className={styles.subline}>I’m an Entrepreneur, Web Designer & Developer. I spend most of my time bringing ideas to life on the web.</p>
             </div>
    

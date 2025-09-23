@@ -32,10 +32,11 @@ export default function InfoCard({
 
                         <div className={styles.tophead}>
                        <div className={styles.imageContainer}> 
-                            <img className={styles.headshot}
+                           <Image className={styles.headshot}
                                 src={logo} 
                                 alt={logoAlt} 
-                                width={36} 
+                                width={36}
+                                height={36}
                             />
 
               
@@ -54,7 +55,7 @@ export default function InfoCard({
                         </a>
                     </div>
                     <div>
-                        <img className={styles.img} src={mainImage} alt={mainImageAlt} />
+                        <Image className={styles.img} src={mainImage} alt={mainImageAlt} width={800} height={400} />
                     </div>
                 </div>
             </div>

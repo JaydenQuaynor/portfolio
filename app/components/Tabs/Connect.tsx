@@ -1,7 +1,6 @@
-import Image from "next/image";
+
 import { Icon } from "@iconify/react";
 import styles from "../../styles/connect.module.css";
-import { IconBrandX } from '@tabler/icons-react';
 
 export default function Connect() {
     return (

@@ -28,18 +28,18 @@ export default function Stack(){
             url=""
             />
             <StackCard
-            logo="/images/Stack logos/Tailwind_CSS_Logo.svg.png "
+            logo="/images/Stack logos/Tailwind_CSS_Logo.svg.png"
             companyName="Tailwind CSS"
             url=""
             />
             <StackCard
-            logo=" /images/Stack logos/React-icon.svg.png"
-            companyName=" React"
+            logo="/images/Stack logos/React-icon.svg.png"
+            companyName="React"
             url=""
             />
             <StackCard
-            logo="/images/Stack logos/expo-go-app.svg "
-            companyName=" Expo"
+            logo="/images/Stack logos/expo-go-app.svg"
+            companyName="Expo"
             url=""
             />
 

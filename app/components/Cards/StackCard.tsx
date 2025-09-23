@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import styles from "../../styles/stack.module.css"
+import Image from "next/image";
 
 interface StackCardProps{
 
@@ -22,10 +23,12 @@ export default function StackCard({logo,companyName,url}: StackCardProps){
             
             </span>
             <div className={styles.contentBox}>
-            <img
+            <Image
                 src={logo}
                 alt="logo"
                 className={styles.pfp}
+                width={120}
+                height={120}
                 />
             <h1 className={styles.name}>{companyName}</h1>
             </div>
