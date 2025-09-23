@@ -7,26 +7,29 @@ export default function Services(){
     return(
 
         <div className="flex flex-col">
-            <ServiceCard 
-            serviceNumber = "01." 
-            serviceTitle = "Framer landing page Design + Dev" 
-            serviceDescription = "Starts from $1,500"
-            />
-            <ServiceCard 
-            serviceNumber = "01." 
-            serviceTitle = "Framer landing page Design + Dev" 
-            serviceDescription = "Starts from $1,500"
-            />
-            <ServiceCard 
-            serviceNumber = "01." 
-            serviceTitle = "Framer landing page Design + Dev" 
-            serviceDescription = "Starts from $1,500"
-            />
-            <ServiceCard 
-            serviceNumber = "01." 
-            serviceTitle = "Framer landing page Design + Dev" 
-            serviceDescription = "Starts from $1,500"
-            />
+                <ServiceCard 
+                  serviceNumber="01." 
+                  serviceTitle="Custom Website Design + Development" 
+                  serviceDescription="Tailored sites that look sharp and drive conversions" 
+                />
+                    
+                <ServiceCard 
+                  serviceNumber="02." 
+                  serviceTitle="AI Automations" 
+                  serviceDescription="Automated workflows to save time and scale faster" 
+                />
+                    
+                <ServiceCard 
+                  serviceNumber="03." 
+                  serviceTitle="Funnel Buildout" 
+                  serviceDescription="High-converting funnels built to maximize sales" 
+                />
+                    
+                <ServiceCard 
+                  serviceNumber="04." 
+                  serviceTitle="Content Creation" 
+                  serviceDescription="Engaging content that builds brand and trust" 
+                />
             <div className="flex justify-center gap-4 m-5">
             <Button
 

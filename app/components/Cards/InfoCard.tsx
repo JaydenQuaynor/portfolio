@@ -12,7 +12,7 @@ interface InfoCardProps {
     mainImage: string;
     mainImageAlt: string;
   }
-  
+
 
 export default function InfoCard({
     logo,
@@ -29,13 +29,23 @@ export default function InfoCard({
             <div className={styles.box}>
                 <div className={styles.contentContainer}>
                     <div className={styles.content}>
+
+                        <div className={styles.tophead}>
                        <div className={styles.imageContainer}> 
                             <img className={styles.headshot}
                                 src={logo} 
                                 alt={logoAlt} 
                                 width={36} 
                             />
+
+              
                         </div>
+
+                        <div className={styles.borderBox}>
+                                <p className={styles.statusTag}>Live</p>
+                            </div>
+
+                            </div>
                         <h1 className={styles.title}>{title}</h1>
                         <p className={styles.subline}>{description}</p>
                         <a href={buttonUrl} className={styles.btn}>

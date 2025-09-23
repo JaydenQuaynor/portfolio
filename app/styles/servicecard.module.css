@@ -16,6 +16,7 @@
 
 .contentContainer{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
 
@@ -25,10 +26,9 @@
 }
 
 .descriptionContainer{
-    border: 1px solid #00000018;
+   
     width: fit-content;
     max-width: fit-content;
-    padding: 0 0.5rem;
     border-radius: 9999px;
 }
 
@@ -43,7 +43,10 @@
 }
 
 .subline{
-    font-size: 14px;
+    
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(192, 192, 192);
 }
 
 @media (max-width: 768px) {

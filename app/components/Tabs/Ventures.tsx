@@ -9,42 +9,42 @@ export default function Ventures(){
 
             <InfoCard
               logo="/images/logos/Screenshot 2025-09-09 at 12-46-46 Bridgeport Overhead Door Garage Door Repair & Installation in CT.png"
-              logoAlt="FramerIt logo"
+              logoAlt="Bptoverhead site example"
               title="BPT Overhead Doors"
               description="Designed a professional website with dedicated service pages, simple navigation, and clear calls-to-action to highlight their expertise and attract local customers."
               buttonText="Visit Site"
               buttonUrl="https://bptoverhead.com/"
-              mainImage="/images/sitepics/Screenshot 2025-09-09 at 12-47-45 Bridgeport Overhead Door Garage Door Repair & Installation in CT.png"
+              mainImage="/images/sitepics/BPTSP.png"
               mainImageAlt="Desktop preview"
             />
             <InfoCard
-              logo="/images/pic.avif"
-              logoAlt="FramerIt logo"
-              title="FramerIt"
+              logo="/images/logos/casaLogo.png"
+              logoAlt="Casa Taino Modualr site example"
+              title="Casa Taino Modular"
               description="Create stunning Framer websites in minutes with our Clean & Responsive Templates, and establish an online presence effortlessly."
-              buttonText="Visit Site"
+              buttonText="Check out other Projects"
               buttonUrl="https://example.com"
-              mainImage="/images/infocardimg.png"
+              mainImage="/images/sitepics/CasatainoSP.png"
               mainImageAlt="Desktop preview"
             />
             <InfoCard
-              logo="/images/pic.avif"
-              logoAlt="FramerIt logo"
+              logo="/images/logos/otrlogo.png"
+              logoAlt="Otr Health Club site example"
               title="FramerIt"
               description="Create stunning Framer websites in minutes with our Clean & Responsive Templates, and establish an online presence effortlessly."
               buttonText="Visit Site"
-              buttonUrl="https://example.com"
-              mainImage="/images/infocardimg.png"
+              buttonUrl="https://otrhealthclub.com/"
+              mainImage="/images/sitepics/OtrSP.png"
               mainImageAlt="Desktop preview"
             />
             <InfoCard
-              logo="/images/pic.avif"
-              logoAlt="FramerIt logo"
-              title="FramerIt"
+              logo="/images/logos/regialogo.png"
+              logoAlt="Regia site example"
+              title="RegiaHQ Content Agency"
               description="Create stunning Framer websites in minutes with our Clean & Responsive Templates, and establish an online presence effortlessly."
               buttonText="Visit Site"
               buttonUrl="https://example.com"
-              mainImage="/images/infocardimg.png"
+              mainImage="/images/sitepics/RegiaSP.png"
               mainImageAlt="Desktop preview"
             />
 

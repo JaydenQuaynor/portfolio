@@ -20,7 +20,7 @@ export default function Header() {
 
             <div className={styles.intro}>
                 <h1 className={styles.headline} >Hey, I'm Jayden Quaynor.</h1>
-                <p className={styles.subline}>  I'm a Web Designer, Music Artist & Photographer. I spend most of time thinking about Tea.</p>
+                <p className={styles.subline}>I’m an Entrepreneur, Web Designer & Developer. I spend most of my time bringing ideas to life on the web.</p>
             </div>
    
           
