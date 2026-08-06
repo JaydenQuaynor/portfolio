@@ -1,14 +1,5 @@
-import Header from "./components/Header";
-import Tabs from "./components/Tabs";
+import PortfolioExperience from "./components/PortfolioExperience";
 
 export default function Home() {
-  return (
-    <div className="mx-8 my-14">
- 
-       <Header />
-        
-      <Tabs />
-      
-    </div>
-  );
+  return <PortfolioExperience />;
 }
