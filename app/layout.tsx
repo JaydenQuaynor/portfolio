@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: `${NAME} | ${ROLE}`,
-    description: "I turn ambitious ideas into polished, scalable software.",
+    description: DESCRIPTION,
     type: "profile",
     url: SITE_URL,
     siteName: NAME,
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: `${NAME} | ${ROLE}`,
-    description: "I turn ambitious ideas into polished, scalable software.",
+    description: DESCRIPTION,
     images: ["/og.png"],
   },
 };

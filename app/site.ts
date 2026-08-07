@@ -12,5 +12,6 @@ export const RESUME_PATH = "/Jayden-Quaynor-Resume.pdf";
 
 export const CAL_URL = "https://cal.com/jaydenquaynor/product-engineer-chat";
 
+/* One line, used for search results and every share card. */
 export const DESCRIPTION =
-  "Jayden Quaynor is a full-stack product engineer in Storrs, CT, building AI production, business capital, and community platforms in Next.js, React, TypeScript, and Convex.";
+  "Product engineer in Storrs, CT. I help teams turn ambitious ideas into scalable, polished products.";
