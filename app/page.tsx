@@ -6,11 +6,20 @@ import { CAL_URL, EMAIL, GITHUB_URL, LINKEDIN_URL, LOCATION, RESUME_PATH } from 
 import { sections } from "./work";
 
 const experience = [
-  { company: "Viralinn", role: "Founder & Full-Stack Developer", dates: "2025 — Present" },
-  { company: "Capital Collab", role: "Business Development Associate, Private Credit", dates: "2025 — Present" },
+  { company: "Viralinn", role: "Founder & Product Engineer", dates: "2025 — Present" },
+  { company: "Surplus", role: "Founder & Product Engineer", dates: "2026 — Present" },
+  { company: "ADM8", role: "Lead Product Engineer", dates: "Sep 2026 — Present" },
+  { company: "Capital Collab", role: "Product Engineer & Business Development", dates: "Dec 2025 — Present" },
   { company: "Found[ERS]", role: "Founder & Executive Director", dates: "2025 — Present" },
   { company: "GaaS Studios", role: "Owner & Lead Developer", dates: "2024 — Present" },
   { company: "PROVN Sport", role: "Web Developer (Contract)", dates: "2026" },
+];
+
+const highlights = [
+  { value: "15+", label: "Brands delivered for" },
+  { value: "35%+", label: "Lower campaign CPC" },
+  { value: "$35K+", label: "Automation revenue" },
+  { value: "92%", label: "Lower platform costs" },
 ];
 
 export default function Home() {
@@ -27,10 +36,13 @@ export default function Home() {
               priority
             />
           </span>
-          <h1>Jayden Quaynor</h1>
+          <div>
+            <span className="header-wordmark" aria-hidden="true">JQ<span> / </span>PRODUCT ENGINEER</span>
+            <h1>Jayden Quaynor</h1>
+          </div>
         </div>
         <p>
-          Product engineer in {LOCATION}. I help teams turn ambitious ideas into scalable, polished products.
+          Product engineer in {LOCATION}. I build AI products, native apps, and tools that make teams work better.
         </p>
         <p>
           I am 19. My goal is to master the art of product and work with the best teams to make products that
@@ -48,6 +60,18 @@ export default function Home() {
           Available for product engineering roles · Open any project for the decisions behind it
         </p>
       </header>
+
+      <section className="highlights" aria-label="Selected results across product and client work">
+        <p className="highlights-label">Selected results · Product & client work</p>
+        <dl className="highlights-grid">
+          {highlights.map((metric) => (
+            <div key={metric.label}>
+              <dt>{metric.value}</dt>
+              <dd>{metric.label}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
 
       <WorkIndex sections={sections} />
 

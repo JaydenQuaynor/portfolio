@@ -14,4 +14,4 @@ export const CAL_URL = "https://cal.com/jaydenquaynor/product-engineer-chat";
 
 /* One line, used for search results and every share card. */
 export const DESCRIPTION =
-  "Product engineer in Storrs, CT. I help teams turn ambitious ideas into scalable, polished products.";
+  "Jayden Quaynor, product engineer in Storrs, CT. Building AI products, native apps, and tools that make teams work better. Founder of Viralinn and Surplus.";

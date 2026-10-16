@@ -1,58 +1,36 @@
 # Jayden Quaynor — Product Engineer
 
-Personal portfolio at [jaydenquaynor.com](https://jaydenquaynor.com). Built to show how I turn ambiguous ideas and complicated operations into shipped software, and to give a hiring manager everything they need in one scroll: case studies, work history, skills, education, and a downloadable resume.
+Personal portfolio at [jaydenquaynor.com](https://jaydenquaynor.com). A single page with selected results, product and client case studies, work history, and a downloadable resume.
 
-## Structure
+## Content
 
-Single page, rendered by `app/components/PortfolioExperience.tsx`:
+- `app/site.ts`: name, positioning, contact links, and canonical site URL.
+- `app/work.ts`: case studies, project status, outcomes, and stacks.
+- `app/page.tsx`: introduction, selected results, and experience.
+- `public/Jayden-Quaynor-Resume.pdf`: current resume download.
+- `docs/content-sources.md`: provenance and limits for the October 2026 update.
 
-1. **Hero** — positioning, availability, resume download
-2. **Proof band** — four defensible numbers
-3. **Case studies** — Viralinn, Capital Collab, Found[ERS]. Each shows the operating problem, the product decision, what shipped, my actual role, and a live link.
-4. **Additional launches** — BPT Overhead, PROVN Sports, OpalKadia, OTR Health Club, GaaS Studios, Truce AI
-5. **Experience** — companies, titles, dates, and what I did
-6. **Skills** — grouped, on a dark slab
-7. **About + Education** — UConn, BS Computer Science
-8. **Footer** — contact and site map
+Project rows open detail panels with the problem, product decisions, shipped work, outcomes, and lessons. Desktop rows show image previews on hover; touch devices reveal previews while scrolling. Surplus is explicitly labeled as a TestFlight beta.
 
-Everything in the Experience, Skills, and Education sections is sourced from the resume in `public/Jayden-Quaynor-Resume.pdf`. Keep them in sync.
+## Branding
 
-## Design
+Dark slate, blue accents, and a custom JQ monogram. `public/favicon.svg` is the icon source; matching ICO, Apple touch, and manifest icons cover browser and home-screen surfaces. `app/opengraph-image.tsx` generates the social share image. Metadata, canonical URL, sitemap, robots, and structured data use the shared site constants.
 
-- Light mineral-gray canvas with near-black ink, chartreuse as the single signature accent, cobalt reserved for links
-- Familjen Grotesk (display), Manrope (body), IBM Plex Mono (labels)
-- Restrained left-aligned type scale, rounded hairline cards, dark contrast slabs for rhythm
-- Real product captures, no mockups
-- Responsive from 375px up, `prefers-reduced-motion` support, visible focus states throughout
+## Development
 
-## Stack
-
-- Next.js 15 App Router, React 19, TypeScript
-- Hand-written CSS in `app/globals.css` (no CSS framework)
-- `next/image` and `next/font`
-
-## Configuration
-
-Site-wide constants live in `app/site.ts` — name, role, location, email, social URLs, resume path, and `SITE_URL`. `SITE_URL` drives metadata, canonical, sitemap, robots, and JSON-LD; override it with `NEXT_PUBLIC_SITE_URL` if deploying to a preview domain.
-
-## Run locally
+Next.js 15 App Router, React 19, TypeScript, and plain CSS. No application database or API keys are required.
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
-
-## Verify
+## Verification
 
 ```bash
 npm run lint
+npx tsc --noEmit
 npm run build
 ```
 
-## Contact
-
-- [LinkedIn](https://www.linkedin.com/in/jaydenquaynor)
-- [GitHub](https://github.com/JaydenQuaynor)
-- [Email](mailto:JaydenQuaynor@gmail.com)
+Check the home page, project panels, resume link, icons, manifest, and share image on desktop and mobile before publishing.

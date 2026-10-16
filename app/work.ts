@@ -25,6 +25,9 @@ export type Project = {
   team?: string;
   url?: string;
   image?: string;
+  imageFit?: "cover" | "contain";
+  imageCaption?: string;
+  status?: string;
 
   /** Panel content. */
   problem: string;
@@ -58,12 +61,39 @@ export const sections: Section[] = [
     blurb: "Started from nothing. I owned the product decisions and wrote the code.",
     projects: [
       {
+        slug: "surplus",
+        name: "Surplus",
+        type: "Native iOS nutrition coach",
+        what: "An iPhone app for gaining weight and muscle. Tracks meals, adapts your plan, and helps you decide what to eat next.",
+        year: "2026 — Present",
+        role: "Founder, product and engineering",
+        url: "https://trysurplus.app",
+        image: "/images/work/surplus-hero.webp",
+        imageFit: "contain",
+        imageCaption: "Surplus brand and product positioning. Currently in TestFlight beta.",
+        status: "TestFlight beta",
+        problem:
+          "For people trying to gain weight, knowing yesterday's calories does not solve today's missed meal. The hard parts are eating consistently, finding something that fits the plan, and knowing what to do when the day gets off track.",
+        approach:
+          "I built the product around the next useful action: notice a gap, suggest a meal, let the user confirm it, and adjust the plan as progress changes. The native SwiftUI app subscribes to Convex for live data. Its AI coach works through approved tools, while deterministic code owns nutrition calculations, target changes, streaks, and rewards.",
+        shipped: [
+          "Native SwiftUI app with onboarding, meal logging, macro targets, and weight progress",
+          "AI coach for meal suggestions and confirmed food logging",
+          "Adaptive nutrition plans, saved meals, streaks, and recovery flows",
+          "Nearby food discovery and optional messaging integration",
+          "Branded landing site, waitlist, and TestFlight beta builds",
+        ],
+        learned:
+          "An AI coach needs a clear boundary between interpreting a request and changing a user's plan. Keeping calculations and state changes in deterministic code makes the experience easier to test and keeps the model focused on the conversation.",
+        stack: ["SwiftUI", "Swift", "Convex", "TypeScript", "Clerk", "OpenRouter"],
+      },
+      {
         slug: "viralinn",
         name: "Viralinn",
         type: "AI production platform",
-        what: "Agencies plan, generate, approve, and publish AI-made content for every client in one workspace. Real brands run on it.",
+        what: "An AI content platform I built and used to deliver marketing assets for 15+ brands.",
         year: "2025 — Present",
-        role: "Founder and full-stack developer",
+        role: "Founder and product engineer",
         team: "Brand and growth teams at Astro Club, Lifesum, Starteryou, Scrupp, Engyne, and Carousel Studio",
         url: "https://www.viralinn.com",
         image: "/images/work/viralinn-hero.webp",
@@ -80,9 +110,9 @@ export const sections: Section[] = [
           "Client delivery on top of the platform: UGC pipelines, ad creative, organic content engines, and cold-email infrastructure",
         ],
         metrics: [
+          { value: "15+", label: "Brands delivered AI marketing assets for" },
+          { value: "35%+", label: "Lower CPC for a Swedish app's UK campaign vs. its typical campaigns" },
           { value: "30K", label: "Views generated for Astro Club" },
-          { value: "6", label: "Brands shipped through the platform" },
-          { value: "4", label: "AI vendor APIs behind one interface" },
         ],
         clients: [
           {
@@ -119,7 +149,7 @@ export const sections: Section[] = [
         slug: "founders",
         name: "Found[ERS]",
         type: "Community and events platform",
-        what: "A national student founder org I started, and the platform that runs it.",
+        what: "A student founder community with 50 NYC members, plus the platform and pitch events I built to bring them together.",
         year: "2025 — Present",
         role: "Founder, executive director, and the engineer",
         team: "Student chapter leads across multiple campuses",
@@ -137,8 +167,9 @@ export const sections: Section[] = [
           "The Founder & Pitch Summit, produced end to end",
         ],
         metrics: [
-          { value: "35+", label: "Active student founders, through a funnel I built" },
-          { value: "1", label: "Summit produced end to end" },
+          { value: "50", label: "NYC community members" },
+          { value: "35+", label: "Entrepreneurs and VC participants at the pitch event" },
+          { value: "$500", label: "Awarded to the top startup" },
         ],
         learned:
           "Running the organization on the software I wrote made me a much harsher judge of my own product decisions. Every friction I left in the admin flow, I paid for personally at 11pm before an event. That feedback loop is the closest thing to real product sense I have found.",
@@ -160,6 +191,10 @@ export const sections: Section[] = [
           "Risk-scoring logic that surfaces at-risk accounts before cancellation",
           "Client sites and landing pages in React and Next.js",
           "Automated cold-outbound email infrastructure integrating several third-party APIs",
+        ],
+        metrics: [
+          { value: "$5K+", label: "Revenue from websites, AI automation, and marketing assets" },
+          { value: "75%+", label: "Increase in client website traffic" },
         ],
         learned:
           "Running outbound for my own clients taught me that the deliverable is a booked call, not a working script. I stopped measuring my automation by whether it ran and started measuring it by what it produced, which changed how I scope every project now.",
@@ -196,6 +231,29 @@ export const sections: Section[] = [
     title: "Client and contract work",
     blurb: "Built on someone else's team, inside their business and their constraints.",
     projects: [
+      {
+        slug: "adm8",
+        name: "ADM8",
+        type: "Enterprise product engineering",
+        what: "Product improvements and custom enterprise workflows that reduced team time investment by 35%.",
+        year: "Sep 2026 — Present",
+        role: "Lead Product Engineer · Forward-Deployed Development & GTM Engineering",
+        team: "Product team and enterprise users",
+        status: "Ongoing role",
+        problem:
+          "Enterprise teams need content tools that fit the way they actually work. Repeated handoffs and production tasks take time away from delivering creative for their brands.",
+        approach:
+          "I work from user feedback and enterprise requirements, then translate those needs into product improvements and custom workflows. Running real creative work through the tools keeps the changes tied to the team's day-to-day needs.",
+        shipped: [
+          "Product improvements shaped by enterprise user feedback",
+          "Custom workflows and internal tooling aligned with company objectives",
+          "AI content trailers for European brands",
+        ],
+        metrics: [{ value: "35%", label: "Reduction in team time investment" }],
+        learned:
+          "A workflow improvement matters when the team can use it in real delivery. Working directly with users helps me decide which steps to automate and where people still need control.",
+        stack: ["Product engineering", "AI media pipelines", "Workflow automation", "GTM engineering"],
+      },
       {
         slug: "astro-club",
         name: "Astro Club",
@@ -309,9 +367,9 @@ export const sections: Section[] = [
         slug: "capital-collab",
         name: "Capital Collab",
         type: "Business capital platform",
-        what: "Moving a lending business off fifteen years of Salesforce onto its own software.",
+        what: "Helped replace legacy Salesforce workflows, cut monthly platform costs from $1,200 to $100, and build automations that generated $35K+.",
         year: "2025 — Present",
-        role: "Business Development Associate, Private Credit. Contributor on the internal build",
+        role: "Product Engineer & Business Development · Contributor on the internal build",
         team: "Internal engineering, underwriting, and sales teams",
         url: "https://www.capitalcollab.com",
         image: "/images/work/capital-collab-hero.webp",
@@ -325,8 +383,9 @@ export const sections: Section[] = [
           "Automations connecting the pieces",
         ],
         metrics: [
-          { value: "15 yrs", label: "Of Salesforce operations being migrated" },
-          { value: "6", label: "Workflows consolidated into one system" },
+          { value: "92%", label: "Lower monthly platform costs: $1,200 to $100 (rounded)" },
+          { value: "$35K+", label: "Revenue generated by automations" },
+          { value: "45K+", label: "U.S. business owners reached through email and GTM systems" },
         ],
         learned:
           "Working the sales side while building the tool is the most direct product research I have ever had. Requirements gathered in a meeting are a wish list; requirements gathered by having to do the job yourself are a spec.",
@@ -428,7 +487,9 @@ export const sections: Section[] = [
  * - Starteryou: creative volume, hours saved by the internal matching tools
  * - Scrupp: emails sent, reply or meeting rate, organic reach
  * - Capital Collab: hours/week saved vs the Salesforce process, loan volume touched
- * - GaaS Studios: calls booked, client revenue attributed, churn caught
+ * - Surplus: active beta users, meal completion, retention
+ * - ADM8: adoption of individual workflows
+ * - GaaS Studios: calls booked, churn caught
  * - BPT Overhead: lead volume before/after, hours saved per job spec
  * - PROVN / OTR: conversion or inquiry lift after launch
  */

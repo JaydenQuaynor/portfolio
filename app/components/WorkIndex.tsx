@@ -142,7 +142,7 @@ export default function WorkIndex({ sections }: { sections: Section[] }) {
                   {/* Touch-only stand-in for the cursor-following preview. */}
                   {project.image ? (
                     <span className="work-thumb" aria-hidden="true">
-                      <Image src={project.image} alt="" width={520} height={340} sizes="100vw" />
+                      <Image src={project.image} alt="" width={520} height={340} sizes="100vw" style={{ objectFit: project.imageFit }} />
                     </span>
                   ) : null}
                 </button>
@@ -162,6 +162,7 @@ export default function WorkIndex({ sections }: { sections: Section[] }) {
               width={520}
               height={340}
               sizes="30vw"
+              style={{ objectFit: project.imageFit }}
               className={hovered === project.slug ? "is-visible" : undefined}
             />
           ) : null,
@@ -201,13 +202,15 @@ export default function WorkIndex({ sections }: { sections: Section[] }) {
               <p className="panel-role">
                 {open.role} · {open.year}
               </p>
+              {open.status ? <p className="panel-status">{open.status}</p> : null}
               {open.team ? <p className="panel-team">Worked with: {open.team}</p> : null}
 
               {open.image ? (
                 <div className="panel-image">
-                  <Image src={open.image} alt={`${open.name} interface`} fill sizes="(max-width: 40rem) 100vw, 34rem" />
+                  <Image src={open.image} alt={`${open.name} project preview`} fill sizes="(max-width: 40rem) 100vw, 34rem" style={{ objectFit: open.imageFit }} />
                 </div>
               ) : null}
+              {open.imageCaption ? <p className="panel-caption">{open.imageCaption}</p> : null}
 
               {/* Numbers first — a hiring manager skims before they read. */}
               {open.metrics?.length ? (
@@ -264,7 +267,7 @@ export default function WorkIndex({ sections }: { sections: Section[] }) {
                   Open {open.name} ↗
                 </a>
               ) : (
-                <p className="panel-visit is-muted">In development</p>
+                <p className="panel-visit is-muted">{open.status ?? "In development"}</p>
               )}
             </div>
           </aside>
