@@ -69,7 +69,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: "#faf9f6",
-  colorScheme: "light",
+  colorScheme: "light dark",
   width: "device-width",
   initialScale: 1,
 };
@@ -102,7 +102,10 @@ const personSchema = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script id="portfolio-theme-init" dangerouslySetInnerHTML={{ __html: `try{var t=localStorage.getItem('portfolio-theme')==='dark'?'dark':'light';document.documentElement.dataset.theme=t;document.querySelector('meta[name="theme-color"]')?.setAttribute('content',t==='dark'?'#12131a':'#faf9f6')}catch{}` }} />
+      </head>
       <body className={`${manrope.variable} ${familjenGrotesk.variable} ${ibmPlexMono.variable}`}>
         <script
           type="application/ld+json"

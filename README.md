@@ -15,7 +15,7 @@ Surplus and Viralinn lead with product interface previews. Company logos open th
 
 ## Branding
 
-Warm white, dark text, orange accents, and product-specific orange and violet preview surfaces. The existing JQ monogram remains the favicon. `app/opengraph-image.tsx` generates the matching light social share image. Metadata, canonical URL, sitemap, robots, and structured data use the shared site constants. Asset sources are recorded in `docs/content-sources.md`.
+Warm white, dark text, orange accents, and product-specific orange and violet preview surfaces. A top-bar toggle switches to dark mode and saves the preference locally. The glass header and product previews have a pointer-following white edge glow on pointer devices, with reduced-motion support. The existing JQ monogram remains the favicon. `app/opengraph-image.tsx` generates the matching light social share image. Metadata, canonical URL, sitemap, robots, and structured data use the shared site constants. Asset sources are recorded in `docs/content-sources.md`.
 
 ## Development
 

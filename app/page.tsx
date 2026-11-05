@@ -1,6 +1,8 @@
 import Image from "next/image";
 
 import FloatingCTA from "./components/FloatingCTA";
+import GlassSurface from "./components/GlassSurface";
+import ThemeToggle from "./components/ThemeToggle";
 import WorkIndex from "./components/WorkIndex";
 import { CAL_URL, EMAIL, GITHUB_URL, LINKEDIN_URL, LOCATION, RESUME_PATH } from "./site";
 import { sections } from "./work";
@@ -26,7 +28,7 @@ export default function Home() {
   return (
     <main>
       <header className="hero">
-        <div className="hero-topline">
+        <GlassSurface className="hero-topline">
           <div className="header-id">
             <span className="header-photo">
               <Image
@@ -39,14 +41,15 @@ export default function Home() {
             </span>
             <div>
               <span className="header-name">Jayden Quaynor</span>
-              <span className="header-wordmark">Product engineer · {LOCATION}</span>
+              <span className="header-wordmark">Product engineer<span className="header-location"> · {LOCATION}</span></span>
             </div>
           </div>
           <nav aria-label="Quick links">
             <a href={GITHUB_URL} target="_blank" rel="noreferrer">GitHub ↗</a>
             <a href={RESUME_PATH} target="_blank" rel="noreferrer">Resume ↗</a>
+            <ThemeToggle />
           </nav>
-        </div>
+        </GlassSurface>
 
         <div className="hero-main">
           <h1>AI products.<br /><span>Built from the<br className="hero-break" /> ground up.</span></h1>

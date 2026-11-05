@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 
 import type { Project, Section } from "../work";
+import { trackGlassPointer } from "./GlassSurface";
 
 /**
  * The work list. Every section uses the same row model — hover floats the
@@ -11,7 +12,7 @@ import type { Project, Section } from "../work";
  * feels like the interaction stopped working. Only the columns differ.
  */
 const brands = [
-  { slug: "adm8", name: "ADM8", logo: "/images/logos/adm8-on-light.png", relationship: "Lead product engineer" },
+  { slug: "adm8", name: "ADM8", logo: "/images/logos/adm8-on-light.png", logoDark: "/images/logos/adm8-on-dark.png", relationship: "Lead product engineer" },
   { slug: "lifesum", name: "Lifesum", logo: "/images/logos/lifesum.svg", relationship: "AI ad creative" },
   { slug: "capital-collab", name: "Capital Collab", logo: "/images/logos/capital-collab.png", relationship: "Product engineering" },
   { slug: "scrupp", name: "Scrupp", logo: "/images/logos/scrupp.png", relationship: "Content & outbound" },
@@ -165,7 +166,8 @@ export default function WorkIndex({ sections, children }: { sections: Section[];
               <li key={brand.slug}>
                 <button type="button" onClick={() => openPanel(project)} aria-label={`View ${brand.name} case study`}>
                   <span className={`brand-mark brand-${brand.slug}`}>
-                    <Image src={brand.logo} alt={brand.name} width={180} height={48} />
+                    <Image className={brand.logoDark ? "brand-logo-light" : undefined} src={brand.logo} alt={brand.name} width={180} height={48} />
+                    {brand.logoDark ? <Image className="brand-logo-dark" src={brand.logoDark} alt={brand.name} width={180} height={48} /> : null}
                     {brand.slug === "scrupp" ? <span>Scrupp</span> : null}
                   </span>
                   <span className="brand-relationship">{brand.relationship}</span>
@@ -186,7 +188,7 @@ export default function WorkIndex({ sections, children }: { sections: Section[];
             const project = all.find((item) => item.slug === slug);
             if (!project) return null;
             return (
-              <button className={`featured-project featured-${slug}`} key={slug} type="button" onClick={() => openPanel(project)} aria-label={`Explore ${project.name} case study`}>
+              <button className={`featured-project featured-${slug}`} key={slug} type="button" onClick={() => openPanel(project)} onPointerMove={trackGlassPointer} aria-label={`Explore ${project.name} case study`}>
                 <ProductPreview slug={slug} priority />
                 <span className="featured-heading"><span><span className="featured-number">0{index + 1} / </span>{project.name}</span><span className="featured-arrow" aria-hidden="true">↗</span></span>
                 <span className="featured-description">{slug === "surplus" ? "A native iOS coach for gaining weight. Meals, macros, and an AI coach that helps you decide what to eat next." : "An AI production platform I built and used to deliver marketing assets for 15+ brands."}</span>

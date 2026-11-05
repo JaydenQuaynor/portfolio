@@ -39,3 +39,7 @@ Company logos accompany the existing case studies and identify the relationship 
 - Lifesum: inline wordmark SVG from `https://lifesum.com`, retrieved November 5.
 - Capital Collab: `https://www.capitalcollab.com/logowhite.png`, trimmed/resized; rendered monochrome for legibility on white.
 - Scrupp: `https://scrupp.com/img/logo.png`, displayed with the company name.
+
+The user's follow-up retained orange accents, requested glass surfaces with an interactive white edge glow, and added a top-bar light/dark toggle. Dark mode uses the existing white ADM8 logo variant. Theme preference is stored locally in the browser.
+
+The resume download was replaced, unchanged, with the PDF explicitly supplied by the user at `Documents/ChatGPT/Misc/output/resume-2026-11-05/Jayden Quaynor Resume.pdf`. SHA-256: `9a6502b6280e7a869f172cf316051f2fb25df942ed949283a18adc4493ea189a`. All visible resume links use the shared `RESUME_PATH`, with a date query to prevent reuse of an old cached download.

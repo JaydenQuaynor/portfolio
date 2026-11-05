@@ -8,7 +8,7 @@ export const EMAIL = "JaydenQuaynor@gmail.com";
 export const LINKEDIN_URL = "https://www.linkedin.com/in/jaydenquaynor";
 export const GITHUB_URL = "https://github.com/JaydenQuaynor";
 
-export const RESUME_PATH = "/Jayden-Quaynor-Resume.pdf";
+export const RESUME_PATH = "/Jayden-Quaynor-Resume.pdf?v=2026-11-05";
 
 export const CAL_URL = "https://cal.com/jaydenquaynor/product-engineer-chat";
 
