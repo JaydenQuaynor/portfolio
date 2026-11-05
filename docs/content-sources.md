@@ -21,3 +21,21 @@ The source is the current `build_resume.py` and exported `Jayden-Quaynor-Resume.
 Surplus content comes from its current project README and native app architecture: SwiftUI, Convex, Clerk, approved AI tools, meal logging, adaptive targets, and optional messaging. The case study describes a TestFlight beta and does not claim public App Store availability, paid subscribers, user growth, or purchase readiness. The image is an existing Surplus brand asset from its landing site.
 
 ADM8 responsibilities, role, and dates come from the same current resume. Existing legacy-project metrics remain unchanged where a newer source was not found.
+
+## November 5, 2026 visual update
+
+The homepage now features Surplus and Viralinn before the complete project archive. Metrics retain their existing values and add project attribution. The 35%+ campaign CPC result remains specific to the previously reported UK campaign, not a cross-client average. No new performance claims or endorsements were added.
+
+Product previews use existing first-party assets:
+
+- Surplus dashboard and coach: `surplus/apps/landing/public/screens/today.jpg` and `agent.jpg`, resized to WebP for this site. The product remains labeled TestFlight beta.
+- Viralinn canvas: `viralin-v2/public/beta/studio.png`, resized to WebP.
+- Surplus wordmark: `surplus/apps/landing/public/brand/wordmark-white.svg`.
+- Viralinn symbol: `viralin-v2/public/Brand/Viralin_logo.svg`.
+
+Company logos accompany the existing case studies and identify the relationship rather than implying an endorsement:
+
+- ADM8: existing `adm8-imba/public/adm8-logo-black.png`, trimmed and resized for light backgrounds.
+- Lifesum: inline wordmark SVG from `https://lifesum.com`, retrieved November 5.
+- Capital Collab: `https://www.capitalcollab.com/logowhite.png`, trimmed/resized; rendered monochrome for legibility on white.
+- Scrupp: `https://scrupp.com/img/logo.png`, displayed with the company name.

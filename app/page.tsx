@@ -16,64 +16,75 @@ const experience = [
 ];
 
 const highlights = [
-  { value: "15+", label: "Brands delivered for" },
-  { value: "35%+", label: "Lower campaign CPC" },
-  { value: "$35K+", label: "Automation revenue" },
-  { value: "92%", label: "Lower platform costs" },
+  { value: "15+", label: "Brands delivered for", source: "Viralinn · AI marketing assets" },
+  { value: "35%+", label: "Lower campaign CPC", source: "Viralinn · UK campaign vs. typical campaigns" },
+  { value: "$35K+", label: "Automation revenue", source: "Capital Collab · Revenue generated" },
+  { value: "92%", label: "Lower platform costs", source: "Capital Collab · $1,200 → $100/month" },
 ];
 
 export default function Home() {
   return (
     <main>
-      <header>
-        <div className="header-id">
-          <span className="header-photo">
-            <Image
-              src="/images/headshot.webp"
-              alt="Jayden Quaynor"
-              width={144}
-              height={144}
-              priority
-            />
-          </span>
-          <div>
-            <span className="header-wordmark" aria-hidden="true">JQ<span> / </span>PRODUCT ENGINEER</span>
-            <h1>Jayden Quaynor</h1>
+      <header className="hero">
+        <div className="hero-topline">
+          <div className="header-id">
+            <span className="header-photo">
+              <Image
+                src="/images/headshot.webp"
+                alt="Jayden Quaynor"
+                width={144}
+                height={144}
+                priority
+              />
+            </span>
+            <div>
+              <span className="header-name">Jayden Quaynor</span>
+              <span className="header-wordmark">Product engineer · {LOCATION}</span>
+            </div>
+          </div>
+          <nav aria-label="Quick links">
+            <a href={GITHUB_URL} target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a href={RESUME_PATH} target="_blank" rel="noreferrer">Resume ↗</a>
+          </nav>
+        </div>
+
+        <div className="hero-main">
+          <h1>AI products.<br /><span>Built from the<br className="hero-break" /> ground up.</span></h1>
+          <div className="hero-intro">
+            <p className="availability">Available for product engineering roles</p>
+            <p className="hero-description">
+              I design and build native apps, AI platforms, and tools that make teams work better.
+              Founder of Surplus and Viralinn. I’m 19, building from {LOCATION}.
+            </p>
+            <div className="header-actions">
+              <a className="cta" href="#featured">
+                Explore my work ↓
+              </a>
+              <a className="cta secondary" href={RESUME_PATH} target="_blank" rel="noreferrer">
+                View resume ↗
+              </a>
+            </div>
+            <div className="hero-contact">
+              <a href={`mailto:${EMAIL}`}>Email me ↗</a>
+              <a href={CAL_URL} target="_blank" rel="noreferrer">Book a call ↗</a>
+            </div>
           </div>
         </div>
-        <p>
-          Product engineer in {LOCATION}. I build AI products, native apps, and tools that make teams work better.
-        </p>
-        <p>
-          I am 19. My goal is to master the art of product and work with the best teams to make products that
-          impact the world.
-        </p>
-        <div className="header-actions">
-          <a className="cta" href={CAL_URL} target="_blank" rel="noreferrer">
-            Book a call ↗
-          </a>
-          <a className="cta secondary" href={`mailto:${EMAIL}`}>
-            Email me
-          </a>
-        </div>
-        <p className="header-hint">
-          Available for product engineering roles · Open any project for the decisions behind it
-        </p>
       </header>
 
-      <section className="highlights" aria-label="Selected results across product and client work">
-        <p className="highlights-label">Selected results · Product & client work</p>
-        <dl className="highlights-grid">
-          {highlights.map((metric) => (
-            <div key={metric.label}>
-              <dt>{metric.value}</dt>
-              <dd>{metric.label}</dd>
-            </div>
-          ))}
-        </dl>
-      </section>
-
-      <WorkIndex sections={sections} />
+      <WorkIndex sections={sections}>
+        <section className="highlights" aria-label="Selected results across product and client work">
+          <p className="highlights-label">Selected results · Product & client work</p>
+          <dl className="highlights-grid">
+            {highlights.map((metric) => (
+              <div key={metric.label}>
+                <dt>{metric.value}</dt>
+                <dd>{metric.label}<span className="metric-source">{metric.source}</span></dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      </WorkIndex>
 
       <section className="work-section">
         <div className="section-head">

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 
 import type { Project, Section } from "../work";
 
@@ -10,7 +10,32 @@ import type { Project, Section } from "../work";
  * screenshot, click opens the detail panel — so moving between sections never
  * feels like the interaction stopped working. Only the columns differ.
  */
-export default function WorkIndex({ sections }: { sections: Section[] }) {
+const brands = [
+  { slug: "adm8", name: "ADM8", logo: "/images/logos/adm8-on-light.png", relationship: "Lead product engineer" },
+  { slug: "lifesum", name: "Lifesum", logo: "/images/logos/lifesum.svg", relationship: "AI ad creative" },
+  { slug: "capital-collab", name: "Capital Collab", logo: "/images/logos/capital-collab.png", relationship: "Product engineering" },
+  { slug: "scrupp", name: "Scrupp", logo: "/images/logos/scrupp.png", relationship: "Content & outbound" },
+];
+
+const featuredSlugs = ["surplus", "viralinn"];
+
+function ProductPreview({ slug, priority = false }: { slug: string; priority?: boolean }) {
+  return (
+    <span className={`featured-visual product-preview-${slug}`}>
+      <Image className="featured-logo" src={`/images/logos/${slug}.svg`} alt={slug === "surplus" ? "Surplus" : "Viralinn"} width={160} height={45} />
+      {slug === "surplus" ? (
+        <span className="surplus-screens">
+          <Image className="surplus-today" src="/images/work/surplus-today.webp" alt="Surplus daily nutrition dashboard with meal logging and macro targets" width={600} height={1305} sizes="(max-width: 48rem) 55vw, 20vw" priority={priority} />
+          <Image className="surplus-coach" src="/images/work/surplus-coach.webp" alt="Surplus AI coach conversation" width={500} height={1087} sizes="(max-width: 48rem) 45vw, 17vw" />
+        </span>
+      ) : (
+        <Image className="viralinn-screen" src="/images/work/viralinn-studio.webp" alt="Viralinn studio canvas connecting briefs, AI generations, and revisions" width={1114} height={703} sizes="(max-width: 48rem) 100vw, 50vw" priority={priority} />
+      )}
+    </span>
+  );
+}
+
+export default function WorkIndex({ sections, children }: { sections: Section[]; children?: ReactNode }) {
   const [hovered, setHovered] = useState<string | null>(null);
   const [active, setActive] = useState<string | null>(null);
   const [open, setOpen] = useState<Project | null>(null);
@@ -75,7 +100,6 @@ export default function WorkIndex({ sections }: { sections: Section[] }) {
   const closePanel = useCallback(() => {
     setOpen(null);
     setDrag(0);
-    lastFocused.current?.focus();
   }, []);
 
   /* Swipe the sheet down to dismiss — only from the top of its scroll, so the
@@ -100,7 +124,23 @@ export default function WorkIndex({ sections }: { sections: Section[] }) {
 
     const onKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") closePanel();
+      if (event.key !== "Tab") return;
+      const controls = panel.current?.querySelectorAll<HTMLElement>('a[href], button, [tabindex="0"]');
+      if (!controls?.length) return;
+      const first = controls[0];
+      const last = controls[controls.length - 1];
+      if (event.shiftKey && (document.activeElement === first || document.activeElement === panel.current)) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
     };
+    const siblings = Array.from(document.querySelector("main")?.children ?? [])
+      .filter((element): element is HTMLElement => element instanceof HTMLElement && !element.contains(panel.current));
+    const priorInert = siblings.map((element) => element.inert);
+    siblings.forEach((element) => { element.inert = true; });
     document.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
     panel.current?.focus();
@@ -108,11 +148,60 @@ export default function WorkIndex({ sections }: { sections: Section[] }) {
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
+      siblings.forEach((element, index) => { element.inert = priorInert[index]; });
+      lastFocused.current?.focus();
     };
   }, [open, closePanel]);
 
   return (
     <div onMouseMove={track}>
+      <div inert={open ? true : undefined}>
+      <section className="brand-section" aria-labelledby="brands-title">
+        <h2 id="brands-title">Teams I’ve built for</h2>
+        <ul className="brand-list">
+          {brands.map((brand) => {
+            const project = all.find((item) => item.slug === brand.slug);
+            return project ? (
+              <li key={brand.slug}>
+                <button type="button" onClick={() => openPanel(project)} aria-label={`View ${brand.name} case study`}>
+                  <span className={`brand-mark brand-${brand.slug}`}>
+                    <Image src={brand.logo} alt={brand.name} width={180} height={48} />
+                    {brand.slug === "scrupp" ? <span>Scrupp</span> : null}
+                  </span>
+                  <span className="brand-relationship">{brand.relationship}</span>
+                </button>
+              </li>
+            ) : null;
+          })}
+        </ul>
+      </section>
+
+      <section id="featured" className="featured-section" aria-labelledby="featured-title">
+        <div className="section-head">
+          <h2 id="featured-title">Selected work</h2>
+          <p>Two products I own, from product decisions to code.</p>
+        </div>
+        <div className="featured-grid">
+          {featuredSlugs.map((slug, index) => {
+            const project = all.find((item) => item.slug === slug);
+            if (!project) return null;
+            return (
+              <button className={`featured-project featured-${slug}`} key={slug} type="button" onClick={() => openPanel(project)} aria-label={`Explore ${project.name} case study`}>
+                <ProductPreview slug={slug} priority />
+                <span className="featured-heading"><span><span className="featured-number">0{index + 1} / </span>{project.name}</span><span className="featured-arrow" aria-hidden="true">↗</span></span>
+                <span className="featured-description">{slug === "surplus" ? "A native iOS coach for gaining weight. Meals, macros, and an AI coach that helps you decide what to eat next." : "An AI production platform I built and used to deliver marketing assets for 15+ brands."}</span>
+                <span className="featured-meta">{slug === "surplus" ? "SwiftUI · Convex · AI coaching" : "Next.js · Convex · AI orchestration"}<span>{slug === "surplus" ? project.status : "Founder & engineer"}</span></span>
+                <span className="featured-read">Explore case study <span aria-hidden="true">↗</span></span>
+              </button>
+            );
+          })}
+        </div>
+      </section>
+
+      {children}
+
+      <details className="work-archive">
+        <summary><span>Explore all {all.length} projects</span><span className="archive-hint">Products, client work, and the decisions behind them</span><span className="archive-toggle" aria-hidden="true">+</span></summary>
       {sections.map((section) => (
         <section key={section.id} id={section.id} className="work-section">
           <div className="section-head">
@@ -151,6 +240,7 @@ export default function WorkIndex({ sections }: { sections: Section[] }) {
           </ul>
         </section>
       ))}
+      </details>
 
       <div className="work-preview" ref={preview} aria-hidden="true">
         {all.map((project) =>
@@ -167,6 +257,7 @@ export default function WorkIndex({ sections }: { sections: Section[] }) {
             />
           ) : null,
         )}
+      </div>
       </div>
 
       {open ? (
@@ -205,7 +296,9 @@ export default function WorkIndex({ sections }: { sections: Section[] }) {
               {open.status ? <p className="panel-status">{open.status}</p> : null}
               {open.team ? <p className="panel-team">Worked with: {open.team}</p> : null}
 
-              {open.image ? (
+              {featuredSlugs.includes(open.slug) ? (
+                <div className="panel-product-preview"><ProductPreview slug={open.slug} /></div>
+              ) : open.image ? (
                 <div className="panel-image">
                   <Image src={open.image} alt={`${open.name} project preview`} fill sizes="(max-width: 40rem) 100vw, 34rem" style={{ objectFit: open.imageFit }} />
                 </div>

@@ -6,15 +6,16 @@ Personal portfolio at [jaydenquaynor.com](https://jaydenquaynor.com). A single p
 
 - `app/site.ts`: name, positioning, contact links, and canonical site URL.
 - `app/work.ts`: case studies, project status, outcomes, and stacks.
-- `app/page.tsx`: introduction, selected results, and experience.
+- `app/page.tsx`: recruiter introduction, resume/contact links, attributed results, and experience.
+- `app/components/WorkIndex.tsx`: company logos, featured product previews, project archive, and accessible case-study panels.
 - `public/Jayden-Quaynor-Resume.pdf`: current resume download.
 - `docs/content-sources.md`: provenance and limits for the October 2026 update.
 
-Project rows open detail panels with the problem, product decisions, shipped work, outcomes, and lessons. Desktop rows show image previews on hover; touch devices reveal previews while scrolling. Surplus is explicitly labeled as a TestFlight beta.
+Surplus and Viralinn lead with product interface previews. Company logos open their case studies and state the kind of work delivered. The expandable archive retains every project. Project rows open detail panels with the problem, product decisions, shipped work, outcomes, and lessons. Panels support Escape, keyboard focus containment, and focus restoration. Surplus is explicitly labeled as a TestFlight beta.
 
 ## Branding
 
-Dark slate, blue accents, and a custom JQ monogram. `public/favicon.svg` is the icon source; matching ICO, Apple touch, and manifest icons cover browser and home-screen surfaces. `app/opengraph-image.tsx` generates the social share image. Metadata, canonical URL, sitemap, robots, and structured data use the shared site constants.
+Warm white, dark text, orange accents, and product-specific orange and violet preview surfaces. The existing JQ monogram remains the favicon. `app/opengraph-image.tsx` generates the matching light social share image. Metadata, canonical URL, sitemap, robots, and structured data use the shared site constants. Asset sources are recorded in `docs/content-sources.md`.
 
 ## Development
 

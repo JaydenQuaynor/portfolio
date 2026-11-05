@@ -70,7 +70,7 @@ export const sections: Section[] = [
         url: "https://trysurplus.app",
         image: "/images/work/surplus-hero.webp",
         imageFit: "contain",
-        imageCaption: "Surplus brand and product positioning. Currently in TestFlight beta.",
+        imageCaption: "Surplus daily nutrition dashboard and AI coach. Currently in TestFlight beta.",
         status: "TestFlight beta",
         problem:
           "For people trying to gain weight, knowing yesterday's calories does not solve today's missed meal. The hard parts are eating consistently, finding something that fits the plan, and knowing what to do when the day gets off track.",
